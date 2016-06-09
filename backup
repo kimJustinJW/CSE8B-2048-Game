@@ -1,0 +1,197 @@
+private void startTiles() {
+	grid = board.getGrid();
+	for (int x = 0; x < grid.length; x++) {
+	    for (int y = 0; y < grid.length; y++) {
+		tile = grid[x][y];
+		box = rectArray[x][y];
+		text = textArray[x][y];
+
+		switch (tile) {
+		    case 0: box = setTileBox(TILE_WIDTH, TILE_WIDTH, COLOR_EMPTY);
+			    rectArray[x][y] = box;
+			    pane.add(box, x, (y + 1)); 
+			    break;
+
+		    case 2: box.setTileBox(TILE_WIDTH, TILE_WIDTH, COLOR_2); 
+			    text = setTileText("2", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_LOW , COLOR_VALUE_DARK);
+			    rectArray[x][y] = box;
+			    textArray[x][y] = text;
+			    pane.add(box, x, (y + 1)); 
+			    pane.add(text, x, (y + 1));
+			    GridPane.setHalignment(text, HPos.CENTER); 
+			    break;
+
+		    case 4: box.setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_4); 
+			    text = setTileText("4", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_LOW , COLOR_VALUE_DARK);
+			    rectArray[x][y] = box;
+			    textArray[x][y] = text; 
+			    pane.add(box, x, (y + 1)); 
+			    pane.add(text, x, (y + 1)); 
+			    GridPane.setHalignment(text, HPos.CENTER); 
+			    break;
+
+		    case 8: box.setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_8); 
+			    text = setTileText("8", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_LOW , COLOR_VALUE_LIGHT);
+			    rectArray[x][y] = box;
+			    textArray[x][y] = text;
+			    pane.add(box, x, (y + 1)); 
+			    pane.add(text, x, (y + 1)); 
+			    GridPane.setHalignment(text, HPos.CENTER);  
+			    break;
+
+		    case 16: box.setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_16); 
+			     text = setTileText("16", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_LOW , COLOR_VALUE_LIGHT);
+			     rectArray[x][y] = box;
+			     textArray[x][y] = text;
+			     pane.add(box, x, (y + 1)); 
+			     pane.add(text, x, (y + 1));
+			     GridPane.setHalignment(text, HPos.CENTER);   
+			     break;
+
+		    case 32: box.setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_32); 
+			     text = setTileText("32", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_LOW , COLOR_VALUE_LIGHT);
+			     rectArray[x][y] = box;
+			     textArray[x][y] = text;
+			     pane.add(box, x, (y + 1)); 
+			     pane.add(text, x, (y + 1));
+			     GridPane.setHalignment(text, HPos.CENTER);   
+			     break;
+
+		    case 64: box = setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_64); 
+			     text = setTileText("64", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_LOW , COLOR_VALUE_LIGHT);
+			     rectArray[x][y] = box;
+			     textArray[x][y] = text;
+			     pane.add(box, x, (y + 1)); 
+			     pane.add(text, x, (y + 1)); 
+			     GridPane.setHalignment(text, HPos.CENTER);  
+			     break;
+
+		    case 128: box = setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_128); 
+			      text = setTileText("128", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_MID, COLOR_VALUE_LIGHT);
+			      rectArray[x][y] = box;
+			      textArray[x][y] = text;
+			      pane.add(box, x, (y + 1)); 
+			      pane.add(text, x, (y + 1));  
+			      GridPane.setHalignment(text, HPos.CENTER); 
+			      break;
+
+		    case 256: box = setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_256); 
+			      text = setTileText("256", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_MID, COLOR_VALUE_LIGHT);
+			      rectArray[x][y] = box;
+			      textArray[x][y] = text; 
+			      pane.add(box, x, (y + 1)); 
+			      pane.add(text, x, (y + 1)); 
+			      GridPane.setHalignment(text, HPos.CENTER); 
+			      break;
+
+		    case 512: box = setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_512); 
+			      text = setTileText("512", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_MID, COLOR_VALUE_LIGHT); 
+			      rectArray[x][y] = box; 
+			      textArray[x][y] = text;
+			      pane.add(box, x, (y + 1)); 
+			      pane.add(text, x, (y + 1)); 
+			      GridPane.setHalignment(text, HPos.CENTER); 
+			      break;
+
+		    case 1024: box = setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_1024); 
+			       text = setTileText("1024", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_HIGH, COLOR_VALUE_LIGHT); 
+			       rectArray[x][y] = box; 
+			       textArray[x][y] = text;
+			       pane.add(box, x, (y + 1)); 
+			       pane.add(text, x, (y + 1)); 
+			       GridPane.setHalignment(text, HPos.CENTER); 
+			       break;
+
+		    case 2048: box = setTileBox(TILE_WIDTH , TILE_WIDTH, COLOR_2048);
+			       text = setTileText("2048", "Comic Sans", FontWeight.BOLD, TEXT_SIZE_HIGH, COLOR_VALUE_LIGHT); 
+			       rectArray[x][y] = box; 
+			       textArray[x][y] = text;
+			       pane.add(box, x, (y + 1)); 
+			       pane.add(text, x, (y + 1));
+			       GridPane.setHalignment(text, HPos.CENTER);  
+			       break;
+		}
+	    }
+	}
+    }
+
+    private void updateTiles() {
+	grid = board.getGrid();
+	for (int x = 0; x < grid.length; x++) {
+	    for (int y = 0; y < grid.length; y++) {
+		tile = grid[x][y];
+		box = rectArray[x][y];
+		text = textArray[x][y];
+
+		if (tile == 0) {
+		    box = setFill(COLOR_EMPTY);
+		}
+
+		else if (tile == 2) {
+		    box.setFill(COLOR_2);
+		    text.setText("2");
+		    text.setFill(COLOR_VALUE_DARK);	    
+		}
+
+		else if (tile == 4) {
+		    box.setFill(COLOR_4);
+		    text.setText("4");
+		    text.setFill(COLOR_VALUE_DARK);
+		}
+
+		else if (tile == 8) {
+		    box.setFill(COLOR_8);
+		    text.setText("8");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 16) {
+		    box.setFill(COLOR_16);
+		    text.setText("16");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 32) {
+		    box.setFill(COLOR_32);
+		    text.setText("32");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 64) {
+		    box.setFill(COLOR_64);
+		    text.setText("64");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 128) {
+		    box.setFill(COLOR_128);
+		    text.setText("128");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 256) {
+		    box.setFill(COLOR_256);
+		    text.setText("256");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 512) {
+		    box.setFill(COLOR_512);
+		    text.setText("512");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 1024) {
+		    box.setFill(COLOR_1024);
+		    text.setText("1024");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+
+		else if (tile == 2048) {
+		    box.setFill(COLOR_2048);
+		    text.setText("2048");
+		    text.setFill(COLOR_VALUE_LIGHT);
+		}
+	    }
+	}
+    }

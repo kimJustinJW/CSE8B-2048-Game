@@ -1,0 +1,26 @@
+/*
+ * Name: Justin Kim
+ * Login: cs8bwadr
+ * Date: 3/3/16
+ * File: Gui2048.java
+ * Sources of Help: None
+ *
+ * 1. In vim, you use the :%s/search/replace/g command to find and 
+ * replace every instance of the word fun with amazing. You would 
+ * use :s/search/replace/. 
+ * 2. You can use "mkdir -p myProject/{src,directory/{fooDir,barDir},
+ * tools,db}".
+ * 3. If you use javac *.java in a directory, it will compile all java
+ * files in the directory. Essentially wildcard characters are shortcuts.
+ * 4. You would use "gvim -p *.c".
+ * 5. A static method can be accessed without a calling object; all it would
+ * need is the classname. Essentially you don't need an object of the static
+ * method's associated class to call it. For example, you can use the Math
+ * class's methods to perform mathemetical functions without having to
+ * create Math objects inside of your current class and without having to
+ * use Math objects to call the Math class's methods.
+ * 6. The student can create different classes for the shapes that determine
+ * different characteristics and import the Color class into her ShapeDrawer
+ * and use the colors as parameters for a universal draw() method.
+ *
+ */
